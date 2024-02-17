@@ -1,2 +1,14 @@
-local fennel = require 'fennel'
-fennel.dofile("/home/irhl/.config/nvim/opts.fnl", {compilerEnv = _G})
+-- :help lua-loader
+vim.loader.enable()
+
+-- load plugins
+vim.cmd('packloadall')
+
+local fennel = require 'libs.fennel'
+local dir = os.getenv("HOME") .. "/.config/nvim/fnl/"
+
+for _, file in ipairs(vim.fn.readdir(dir)) do
+    if file:match("%.fnl$") then
+        fennel.dofile(dir .. file, {compilerEnv = _G})
+    end
+end
