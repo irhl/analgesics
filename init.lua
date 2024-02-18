@@ -4,6 +4,11 @@ vim.loader.enable()
 -- load plugins
 vim.cmd('packloadall')
 
+-- dependencies:
+-- https://github.com/bakpakin/Fennel
+-- + blob/main/bootstrap/fennel.lua
+--
+-- > ~/.config/nvim/lua/libs/fennel.lua
 local fennel = require 'libs.fennel'
 local dir = os.getenv("HOME") .. "/.config/nvim/fnl/"
 
