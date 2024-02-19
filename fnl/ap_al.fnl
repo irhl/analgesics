@@ -44,22 +44,27 @@
 (local indent_blankline (require :indent_blankline))
 (indent_blankline.setup {:show_end_of_line true})
 
-(set vim.g.indent_blankline_bufname_exclude '["abc.cht"
-					      ".*\\.txt"])
+(set vim.g.indent_blankline_bufname_exclude
+  '["abc.cht"
+  ".*\\.txt"])
 
 ; WhoIsSethDaniel/toggle-lsp-diagnostics.nvim
 (local lsp-diagnostics (require "toggle_lsp_diagnostics"))
 (lsp-diagnostics.init)
 
 ; kana.vim, written by Rory McCann
-(set vim.g.eskk_directory  {:path "~/.config/nvim/pack/plugins/start/skk"})
-(set vim.g.eskk_dictionary {:path "~/.config/nvim/pack/plugins/start/skk/SKK-JISYO.L"
-                            :sorted 1
-                            :encoding "utf-8"})
+(set vim.g.eskk_directory
+  {:path "~/.config/nvim/pack/plugins/start/skk"})
 
-(set vim.g.eskk_large_dictionary {:path "~/.config/nvim/pack/plugins/start/skk/SKK-JISYO.L"
-                                  :sorted 1
-                                  :encoding "euc-jp"})
+(set vim.g.eskk_dictionary
+  {:path "~/.config/nvim/pack/plugins/start/skk/SKK-JISYO.L"
+   :sorted 1
+   :encoding "utf-8"})
+
+(set vim.g.eskk_large_dictionary
+  {:path "~/.config/nvim/pack/plugins/start/skk/SKK-JISYO.L"
+   :sorted 1
+   :encoding "euc-jp"})
 
 (set vim.g.eskk_kakutei_when_unique_candidate 1)
 (set vim.g.eskk_enable_completion 0)
