@@ -2,23 +2,37 @@
 (print (string.format "hi, %s!" user))
 
 (local opts
-  {:ruler         false
-   :wrap          false
-   :showcmd       false
-   :showmode      false
-   :swapfile      false
-   :undofile      true
-   :backup        false
+  {:lazyredraw    true
+   :ttyfast       true
    :termguicolors true
 
-   :mouse ""
-   :guicursor "i:block"
-   :signcolumn "yes:2"
-   :fillchars "eob: "
-   :fileencoding :utf-8
-   :clipboard :unnamedplus
-   :completeopt {:menu :menuone :noselect true}
-   :undodir (vim.fn.expand "~/.cache/nvim/undodir")})
+   :ruler         false
+   :showcmd       false
+   :showmode      false
+   :signcolumn    "yes:2"
+
+   :expandtab     false
+   :hlsearch      false
+   :incsearch     true
+   :ignorecase    true
+   :smartcase     true
+   :smartindent   true
+   :scrolloff     8
+   :sidescrolloff 8
+
+   :mouse         ""
+   :guicursor     "i:block"
+   :cursorline    true
+
+   :wrap          false
+   :fillchars     "eob: "
+   :fileencoding  "utf-8"
+   :clipboard     :unnamedplus
+
+   :backup        false
+   :swapfile      false
+   :undofile      true
+   :undodir       (vim.fn.expand "~/.cache/nvim/undodir")})
 
 (each [v1 v2 (pairs opts)]
   (tset vim.opt v1 v2))
