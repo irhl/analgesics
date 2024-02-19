@@ -45,7 +45,7 @@
 (indent_blankline.setup {:show_end_of_line true})
 
 (set vim.g.indent_blankline_bufname_exclude
-  '["abc.cht"
+  ["abc.cht"
   ".*\\.txt"])
 
 ; WhoIsSethDaniel/toggle-lsp-diagnostics.nvim
