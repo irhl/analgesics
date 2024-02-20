@@ -54,15 +54,15 @@
 
 ; kana.vim, written by Rory McCann
 (set vim.g.eskk_directory
-  {:path "~/.config/nvim/pack/plugins/start/skk"})
+  {:path "~/.config/nvim/pack/plugins/start/kana"})
 
 (set vim.g.eskk_dictionary
-  {:path "~/.config/nvim/pack/plugins/start/skk/SKK-JISYO.L"
+  {:path "~/.config/nvim/pack/plugins/start/kana/SKK-JISYO.L"
    :sorted 1
    :encoding "utf-8"})
 
 (set vim.g.eskk_large_dictionary
-  {:path "~/.config/nvim/pack/plugins/start/skk/SKK-JISYO.L"
+  {:path "~/.config/nvim/pack/plugins/start/kana/SKK-JISYO.L"
    :sorted 1
    :encoding "euc-jp"})
 
