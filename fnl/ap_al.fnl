@@ -15,9 +15,9 @@
 
 ; folke/which-key.nvim
 (local which_key (require :which-key))
-(which_key.setup {:icons {:group "+"
+(which_key.setup {:icons {:group      "+"
                           :breadcrumb "="
-                          :separator "->"}})
+                          :separator  "->"}})
 
 ; lewis6991/gitsigns.nvim
 (local gitsigns (require :gitsigns))
