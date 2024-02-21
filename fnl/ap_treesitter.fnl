@@ -1,6 +1,6 @@
-(local ts (require :nvim-treesitter.configs))
+(local treesitter (require :nvim-treesitter.configs))
 
-(ts.setup {
+(treesitter.setup {
     :ensure_installed [
         "c"
         "cpp"
