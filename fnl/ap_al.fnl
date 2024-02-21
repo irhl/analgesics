@@ -2,10 +2,6 @@
 (local autopairs (require :nvim-autopairs))
 (autopairs.setup)
 
-; echasnovski/mini.starter
-(local starter (require :mini.starter))
-(starter.setup {:evaluate_single true})
-
 ; nvim-telescope/telescope.nvim
 (local telescope (require :telescope))
 (telescope.setup {:pickers {:find_files {:hidden true}}})
