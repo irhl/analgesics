@@ -1,5 +1,6 @@
-; 'williamboman/mason.nvim'
-; 'williamboman/mason-lspconfig.nvim'
+; williamboman/mason.nvim
+; williamboman/mason-lspconfig.nvim
+; hrsh7th/cmp-nvim-lsp
 (local mason (require :mason))
 (mason.setup)
 
