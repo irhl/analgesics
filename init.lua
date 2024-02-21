@@ -1,3 +1,9 @@
+-- :help lua-loader
+vim.loader.enable()
+
+-- load plugins
+vim.cmd('packloadall')
+
 -- dependencies:
 -- https://github.com/bakpakin/Fennel
 -- + /blob/main/bootstrap/fennel.lua
@@ -5,7 +11,7 @@
 -- > ~/.config/nvim/lua/libs/fennel.lua
 local fennel = require 'libs.fennel'
 
--- this is no good idea, but compared to the command: 
+-- this is no good idea, but compared to the command:
 -- os.execute(fennel --compile "file.fnl")
 -- this barely have noticeable delay
 local dir_fnl = os.getenv('HOME') .. '/.config/nvim/fnl/'
@@ -28,9 +34,3 @@ for _, plugin in ipairs(read) do
         pcall(dofile, source .. plugin)
     end
 end
-
--- :help lua-loader
-vim.loader.enable()
-
--- load plugins
-vim.cmd('packloadall')
