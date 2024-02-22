@@ -1,25 +1,36 @@
-(comment "LOOK AT THIS, ITS STONE COLD STEVE AUSTIN!!
-	 STONE COLD STUNNER!!!!!! STUNNNERRR!
-	 OM MAH GAWWWWWWDD!!!!!!!")
+(comment "castle gates of irhl
+
+do the command below, to start downloading plugins
+:lua plugin_ensemble()
+
+everything should be good now. good gracious.. ravioli moli..
+  holi moli.... tf is in the pocket holi?
+
+[!]")
 
 (local tl (require :telescope.builtin))
 (local keymaps
   {:silent
+    ; cursor movement
     [[[:v :n]  :w      :0]
      [[:v :n]  :ee     "$"]
+     ; cursor travel
      [[:v :n]  :es     ":mark o <cr>"]
      [[:v :n]  :er     "'o"]
-         [:n   :ff     tl.find_files {}]
-         [:n   :fg     tl.live_grep {}]
-         [:n   :fb     tl.buffers {}]
-         [:n   :fv     tl.help_tags {}]
-         [:n   :<C-h>  ":resize +10<cr>"]
-         [:n   :<C-j>  ":resize -10<cr>"]
-         [:n   :<C-k>  ":vertical resize +10<cr>"]
-         [:n   :<C-l>  ":vertical resize -10<cr>"]]
+
+     [:n   :ff     tl.find_files {}]
+     [:n   :fg     tl.live_grep {}]
+     [:n   :fb     tl.buffers {}]
+     [:n   :fv     tl.help_tags {}]
+     [:n   :<C-h>  ":resize +10<cr>"]
+     [:n   :<C-j>  ":resize -10<cr>"]
+     [:n   :<C-k>  ":vertical resize +10<cr>"]
+     [:n   :<C-l>  ":vertical resize -10<cr>"]]
 
    :normal
+    ; find and replace
     [[[:v :n]  :<C-f>  ":%s/"]
+
      [[:v :n]  :<C-i>  ":lua kana()<cr>"]
      [[:v :n]  :<C-t>  ":ToggleDiag<cr>"]
          [:n   :<C-z>  vim.cmd.bprev]
@@ -28,7 +39,8 @@
          [:n   :<C-s>  vim.cmd.write]]})
 
 (local autocmd
-  [[:BufWritePre "*" "%s/\\s\\+$//e"]])
+    ; trim trailing whitespaces
+  [[:BufWritePre  "*" "%s/\\s\\+$//e"]])
 
 (local options
   {:lazyredraw       true
@@ -63,19 +75,43 @@
    :undofile         true
    :undodir          (vim.fn.expand "~/.cache/nvim/undodir")})
 
-; disable builtin plugins
-(local builtin_plugins
-  [:2html_plugin :getscript :getscriptPlugin :gzip :logipat
-   :netrw :netrwPlugin :netrwSettings :netrwFileHandlers
-   :matchit :tar :tarPlugin :rrhelper :spellfile_plugin
-   :vimball :vimballPlugin :zip :zipPlugin :tutor :rplugin
-   :syntax :synmenu :optwin :compiler :bugreport :ftplugin])
+(local receive_full
+   ; EDITOR STANDARD
+  [:nvim-treesitter/nvim-treesitter
+   :nvim-telescope/telescope.nvim
+   :nvim-lua/plenary.nvim
+   :folke/which-key.nvim
+   :echasnovski/mini.starter
 
-(local builtin_providers
-  [:node :perl :ruby])
+   ; EDITOR ENLIGHTENMENT
+   :williamboman/mason.nvim
+   :williamboman/mason-lspconfig
+   :neovim/nvim-lspconfig
+   :hrsh7th/nvim-cmp
+   :hrsh7th/cmp-path
+   :hrsh7th/cmp-buffer
+   :hrsh7th/cmp-nvim-lua
+   :hrsh7th/cmp-nvim-lsp
+   :saadparwaiz1/cmp_luasnip
+   :L3MON4D3/LuaSnip
+   :rafamadriz/friendly-snippets
+
+   ; EDITOR ENCHANCEMENT
+   :windwp/nvim-autopairs
+   :mg979/vim-visual-multi
+
+   ; SYNTAX HIGHLIGHTING
+   :lewis6991/gitsigns.nvim
+   :brenoprata10/nvim-highlight-colors
+   :lukas-reineke/indent-blankline.nvim])
+
+(local receive_raw
+   ; MULTILINGUAL INPUT PLUGINS
+   [:neovim/neovim/master/runtime/keymap/kana.vim
+    :skk-dev/dict/master/SKK-JISYO.L])
 
 {:autocmd           autocmd
  :options           options
  :keymaps           keymaps
- :builtin_plugins   builtin_plugins
- :builtin_providers builtin_providers}
+ :receive_raw       receive_raw
+ :receive_full      receive_full}
