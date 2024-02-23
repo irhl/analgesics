@@ -45,8 +45,8 @@
 (indent_blankline.setup {:show_end_of_line true})
 
 (set vim.g.indent_blankline_bufname_exclude
-  ["abc.cht"
-  ".*\\.txt"])
+  [".*\\.csv"
+   ".*\\.txt"])
 
 ; kana.vim, written by Rory McCann
 (set vim.g.eskk_directory
