@@ -1,8 +1,5 @@
 (comment "castle gates of irhl
 
-do the command below, to start downloading plugins
-:lua plugin_ensemble()
-
 everything should be good now. good gracious.. ravioli moli..
   holi moli.... tf is in the pocket holi?
 
