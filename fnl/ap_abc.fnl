@@ -1,52 +1,49 @@
+; WhoIsSethDaniel/toggle-lsp-diagnostics.nvim
+((. (require :toggle_lsp_diagnostics) :init))
+
 ; windwp/nvim-autopairs
-(local autopairs (require :nvim-autopairs))
-(autopairs.setup)
+((. (require :autopairs) :setup))
 
 ; nvim-telescope/telescope.nvim
-(local telescope (require :telescope))
-(telescope.setup {:pickers {:find_files {:hidden true}}})
+((. (require :telescope) :setup)
+  {:pickers {:find_files {:hidden true}}})
 
 (set vim.opt.timeout true)
 (set vim.opt.timeoutlen 300)
 
 ; folke/which-key.nvim
-(local which_key (require :which-key))
-(which_key.setup {:icons {:group      "+"
-                          :breadcrumb "="
-                          :separator  "->"}})
+((. (require :which_key) :setup)
+  {:icons {:group      "+"
+           :breadcrumb "="
+           :separator  "->"}})
 
 ; lewis6991/gitsigns.nvim
-(local gitsigns (require :gitsigns))
-(gitsigns.setup {:signs {:add          {:text "++"}
-                         :change       {:text "::"}
-                         :delete       {:text "--"}
-                         :changedelete {:text "~~"}
-                         :topdelete    {:text "xx"}
-                         :untracked    {:text ".."}}
-
-                         :signcolumn true
-                         :numhl false
-                         :linehl false
-                         :word_diff false
-                         :watch_gitdir {:follow_files false}})
+((. (require :gitsigns) :setup)
+  {:signs {:add          {:text "++"}
+           :change       {:text "::"}
+           :delete       {:text "--"}
+           :changedelete {:text "~~"}
+           :topdelete    {:text "xx"}
+           :untracked    {:text ".."}}
+           :signcolumn true
+           :numhl false
+           :linehl false
+           :word_diff false
+           :watch_gitdir {:follow_files false}})
 
 ; brenoprata10/nvim-highlight-colors
-(local highlight_colors (require :nvim-highlight-colors))
-(highlight_colors.setup {:render "foreground"
-                          :enable_named_colors false
-                          :enable_tailwind false})
+((. (require :highlight_colors) :setup)
+  {:render "foreground"
+   :enable_named_colors false
+   :enable_tailwind false})
 
 ; lukas-reineke/indent-blankline.nvim.git
-(local indent_blankline (require :indent_blankline))
-(indent_blankline.setup {:show_end_of_line true})
+((. (require :indent_blankline) :setup)
+  {:show_end_of_line true})
 
 (set vim.g.indent_blankline_bufname_exclude
-  ["abc.cht"
-  ".*\\.txt"])
-
-; WhoIsSethDaniel/toggle-lsp-diagnostics.nvim
-(local lsp-diagnostics (require "toggle_lsp_diagnostics"))
-(lsp-diagnostics.init)
+  [".*\\.csv"
+   ".*\\.txt"])
 
 ; kana.vim, written by Rory McCann
 (set vim.g.eskk_directory
