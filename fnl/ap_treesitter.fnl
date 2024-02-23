@@ -1,25 +1,24 @@
-(local treesitter (require :nvim-treesitter.configs))
-
-(treesitter.setup {
+((. (require :nvim-treesitter.configs) :setup) {
     :ensure_installed [
-        "c"
-        "cpp"
-        "lua"
-        "vim"
+	"c"
+	"cpp"
+	"lua"
+	"vim"
 	"vimdoc"
     ]
     :ignore_install [
-        "javascript"
-        "typescript"
-        "npm"
-        "python"
+	"javascript"
+	"typescript"
+	"npm"
+	"python"
     ]
     :sync_install false
     :auto_install false
 
     :highlight {
-        :enable true
-        :disable {}
-        :additional_vim_regex_highlighting false
+	:enable true
+	:disable {}
+	:additional_vim_regex_highlighting false
     }
 })
+
