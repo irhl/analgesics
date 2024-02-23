@@ -1,5 +1,8 @@
 (local config (require :config))
 
+(vim.cmd "hi clear")
+(set vim.opt.background "light")
+
 ; functions ?> wait for global call
 (fn _G.plugin_ensemble []
   (let [url-full "https://github.com/"
@@ -39,13 +42,18 @@
       (vim.keymap.set (. v 1) (. v 2) (. v 3) opts))))
 
 (fn c2 []
-(each [_ v (ipairs config.autocmd)]
-  (vim.cmd (string.format "autocmd %s %s %s" (. v 1) (. v 2) (. v 3)))))
+  (each [_ v (ipairs config.autocmd)]
+    (vim.cmd (string.format "autocmd %s %s %s" (. v 1) (. v 2) (. v 3)))))
 
 (fn c3 []
   (each [v1 v2 (pairs config.options)]
     (tset vim.opt v1 v2)))
 
+(fn c4 []
+  (each [hl col (pairs config.theme)]
+    (vim.api.nvim_set_hl 0 hl col)))
+
 (c1)
 (c2)
 (c3)
+(c4)

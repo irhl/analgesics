@@ -75,6 +75,77 @@ everything should be good now. good gracious.. ravioli moli..
    :undofile         true
    :undodir          (vim.fn.expand "~/.cache/nvim/undodir")})
 
+; BULBAASUR EGG.. STRAIGHT FROM THE TREE????
+(local bgNormal    :#201f1e)   (local fgNormal    :#716b67)
+(local Visual      :#2a2928)   (local String      :#8a827d)
+(local LineNR      :#2d2c2a)   (local Statement   :#9f948d)
+(local PreProc     :#403e3c)   (local Operator    :#a98b90)
+(local Special     :#544e4c)   (local Float       :#c89699)
+(local Identifier  :#7e6f6f)   (local Function    :#bf838c)
+
+(local theme
+  {:Normal               {:fg fgNormal   :bg bgNormal}
+   :String               {:fg String     :bg :NONE}
+
+   :Constant             {:fg fgNormal   :bg :NONE}
+   :Function             {:fg Function   :bg :NONE}
+   :Identifier           {:fg Identifier :bg :NONE}
+   :Type                 {:fg fgNormal   :bg :NONE}
+   :PreProc              {:fg PreProc    :bg :NONE}
+   :Statement            {:fg Statement  :bg :NONE}
+   :SpecialKey           {:fg fgNormal   :bg :NONE}
+   :Special              {:fg Special    :bg :NONE}
+   :Repeat               {:fg fgNormal   :bg :NONE}
+   :Operator             {:fg Operator   :bg :NONE}
+   :Float                {:fg Float      :bg :NONE}
+   :Number               {:fg Float      :bg :NONE}
+   :NonText              {:fg fgNormal   :bg :NONE}
+   :TODO                 {:fg fgNormal   :bg :NONE}
+   :Title                {:fg Statement  :bg :NONE}
+   :Underlined           {:fg fgNormal   :bg :NONE}
+
+   :Comment              {:fg PreProc  :bg :NONE}
+   :LineNR               {:fg LineNR   :bg :NONE}
+   :SignColumn           {:fg bgNormal :bg bgNormal}
+   :Search               {:fg bgNormal :bg fgNormal}
+
+   :Search               {:fg bgNormal :bg fgNormal}
+   :IncSearch            {:fg bgNormal :bg fgNormal}
+   :Substitute           {:fg bgNormal :bg fgNormal}
+   :MatchParen           {:fg bgNormal :bg fgNormal}
+   :Visual               {:fg :NONE    :bg Visual}
+   :DiffAdd              {:fg fgNormal :bg :NONE}
+   :DiffText             {:fg fgNormal :bg :NONE}
+   :DiffChange           {:fg fgNormal :bg :NONE}
+   :DiffDelete           {:fg fgNormal :bg :NONE}
+   :Directory            {:fg fgNormal :bg :NONE}
+   :Folded               {:fg :NONE    :bg Visual}
+
+   :Error                {:fg fgNormal :bg :NONE}
+   :ErrorMsg             {:fg fgNormal :bg :NONE}
+   :WarningMsg           {:fg fgNormal :bg :NONE}
+   :MoreMsg              {:fg fgNormal :bg :NONE}
+   :Question             {:fg fgNormal :bg :NONE}
+
+   :DiagnosticError      {:fg fgNormal :bg :NONE}
+   :DiagnosticWarn       {:fg fgNormal :bg :NONE}
+   :Pmenu                {:fg fgNormal :bg bgNormal}
+   :PmenuKind            {:fg fgNormal :bg String}
+   :PmenuExtra           {:fg fgNormal :bg String}
+   :PmenuSel             {:fg fgNormal :bg Visual}
+   :PmenuThumb           {:fg fgNormal :bg bgNormal}
+   :Statusline           {:fg fgNormal :bg bgNormal}
+   :StatuslineNC         {:fg bgNormal :bg bgNormal}
+   :TabLine              {:fg fgNormal :bg bgNormal}
+   :CursorLine           {:fg :NONE    :bg Visual}
+
+   :WhichKeyFloat                     {:link :Statusline}
+   :IndentBlanklineChar               {:link :LineNr}
+   :IndentBlanklineSpaceChar          {:link :LineNr}
+   :IndentBlanklineSpaceCharBlankline {:link :LineNr}
+   :IndentBlanklineContextStart       {:link :LineNr}
+   :IndentBlanklineContextChar        {:link :Constant}})
+
 (local receive_full
    ; EDITOR STANDARD
   [:nvim-treesitter/nvim-treesitter
@@ -92,8 +163,8 @@ everything should be good now. good gracious.. ravioli moli..
    :hrsh7th/cmp-buffer
    :hrsh7th/cmp-nvim-lua
    :hrsh7th/cmp-nvim-lsp
-   :saadparwaiz1/cmp_luasnip
    :L3MON4D3/LuaSnip
+   :saadparwaiz1/cmp_luasnip
 
    ; EDITOR ENCHANCEMENT
    :windwp/nvim-autopairs
@@ -112,5 +183,6 @@ everything should be good now. good gracious.. ravioli moli..
 {:autocmd           autocmd
  :options           options
  :keymaps           keymaps
+ :theme             theme
  :receive_raw       receive_raw
  :receive_full      receive_full}
