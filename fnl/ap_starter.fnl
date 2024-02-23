@@ -18,7 +18,7 @@
   (local reply (file:read "*a"))
   (file:close)
   reply)
-(set H.default_footer (ascii_art "/home/irhl/.config/nvim/fnl/ap_starter.txt"))
+(set H.default_footer (ascii_art (.. (os.getenv "HOME") "/.config/nvim/fnl/ap_starter.txt")))
 
 (local starter (require :mini.starter))
 (starter.setup
